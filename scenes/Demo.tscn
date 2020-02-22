@@ -22,7 +22,7 @@ gravity = Vector3( -100, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 tangential_accel_curve = SubResource( 2 )
-scale = 3.0
+scale = 4.0
 scale_random = 1.0
 
 [node name="Demo" type="Node2D"]

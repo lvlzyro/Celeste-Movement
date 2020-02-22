@@ -351,7 +351,7 @@ texture = ExtResource( 1 )
 offset = Vector2( 1, -6 )
 vframes = 10
 hframes = 8
-frame = 72
+frame = 1
 
 [node name="RayCast2D" type="RayCast2D" parent="Rotatable"]
 rotation = 4.71239
@@ -385,7 +385,7 @@ shadow_filter = 5
 shadow_filter_smooth = 11.1
 
 [node name="trailTimer" type="Timer" parent="."]
-wait_time = 0.09
+wait_time = 0.08
 autostart = true
 
 [node name="Camera" type="Node" parent="."]
