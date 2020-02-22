@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sountrack.wav-ed5228cdb12878cb7759af01d8a2e1f5.sample"
+
+[deps]
+
+source_file="res://assets/sfx/sountrack.wav"
+dest_files=[ "res://.import/sountrack.wav-ed5228cdb12878cb7759af01d8a2e1f5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
