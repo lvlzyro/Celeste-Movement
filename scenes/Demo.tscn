@@ -22,7 +22,8 @@ gravity = Vector3( -100, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 tangential_accel_curve = SubResource( 2 )
-scale = 2.0
+scale = 3.0
+scale_random = 1.0
 
 [node name="Demo" type="Node2D"]
 
@@ -33,7 +34,8 @@ z_index = -50
 texture = ExtResource( 2 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 270, 480 )
+position = Vector2( 273.413, 444.166 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 2

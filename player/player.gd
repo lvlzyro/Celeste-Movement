@@ -12,7 +12,7 @@ const WALL_JUMP_TIME = 10
 const WALL_SLIDE_FACTOR = 0.8
 const WALL_HORIZONTAL_TIME = 30
 const GRAVITY = 2100
-const DASH_SPEED = 30000
+const DASH_SPEED = 36000
 
 
 var velocity = Vector2()
@@ -171,6 +171,7 @@ func dash(delta):
 		if Input.is_action_just_pressed("dash"):
 			velocity = axis * DASH_SPEED * delta
 			spriteColor = "blue"
+			Input.start_joy_vibration(0, 1, 1, 0.2)
 			isDashing = true
 			hasDashed = true
 			$Camera/ShakeCamera2D.add_trauma(0.5)
@@ -178,7 +179,7 @@ func dash(delta):
 	if isDashing:
 		trail = true
 		dashTime += 1
-		if dashTime >= int(0.2 * 1 / delta):
+		if dashTime >= int(0.25 * 1 / delta):
 			isDashing = false
 			trail = false
 			dashTime = 0
@@ -202,9 +203,9 @@ func _on_trailTimer_timeout():
 		trail_sprite.vframes = 10
 		trail_sprite.hframes = 8
 		trail_sprite.frame = $Rotatable/Sprite.frame
-		trail_sprite.scale.x = 2
-		trail_sprite.scale.y = 2
-		trail_sprite.scale.x = $Rotatable.scale.x * 2
+		trail_sprite.scale.x = 2 * 1.2
+		trail_sprite.scale.y = 2 * 1.2
+		trail_sprite.scale.x = $Rotatable.scale.x * 2 * 1.2
 		trail_sprite.set_script(load("res://assets/scripts/trail_fade.gd"))
 		
 		get_parent().add_child(trail_sprite)

@@ -27,6 +27,7 @@ config/icon="res://icon.png"
 [display]
 
 window/size/height=574
+window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
