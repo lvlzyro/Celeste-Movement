@@ -54,6 +54,7 @@ position = Vector2( 1054, 300 )
 z_index = 1
 amount = 250
 lifetime = 10.0
+preprocess = 20.0
 randomness = 1.0
 process_material = SubResource( 3 )
 
