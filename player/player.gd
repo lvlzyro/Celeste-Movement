@@ -174,7 +174,7 @@ func dash(delta):
 			Input.start_joy_vibration(0, 1, 1, 0.2)
 			isDashing = true
 			hasDashed = true
-			$Camera/ShakeCamera2D.add_trauma(0.5)
+			$Camera/ShakeCamera2D.shake(0.5*axis.x, 0.5*axis.y)
 
 	if isDashing:
 		trail = true
@@ -184,14 +184,18 @@ func dash(delta):
 			trail = false
 			dashTime = 0
 
-	if is_on_floor() && velocity.y >= 0:
+	if is_on_floor() && velocity.y && dashTime == 0:
 		hasDashed = false
 		spriteColor = "red"
 
 func getInputAxis():
-	axis = Vector2.ZERO
-	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
-	axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	var new_x_axis = 0
+	new_x_axis = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
+	axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("jump"))
+	if new_x_axis != 0:
+		axis.x = new_x_axis
+	if axis.y != 0 && new_x_axis == 0:
+		axis.x = 0;
 	axis = axis.normalized()
 
 

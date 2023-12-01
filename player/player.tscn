@@ -349,8 +349,8 @@ shape = SubResource( 1 )
 scale = Vector2( -2, 2 )
 texture = ExtResource( 1 )
 offset = Vector2( 1, -6 )
-vframes = 10
 hframes = 8
+vframes = 10
 frame = 1
 
 [node name="RayCast2D" type="RayCast2D" parent="Rotatable"]
@@ -394,4 +394,5 @@ autostart = true
 position = Vector2( 512, 287 )
 current = true
 script = ExtResource( 4 )
+
 [connection signal="timeout" from="trailTimer" to="." method="_on_trailTimer_timeout"]
