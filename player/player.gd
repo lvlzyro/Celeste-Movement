@@ -174,7 +174,7 @@ func dash(delta):
 			Input.start_joy_vibration(0, 1, 1, 0.2)
 			isDashing = true
 			hasDashed = true
-			#$Camera/ShakeCamera2D.add_trauma(0.5)
+			$Camera/ShakeCamera2D.add_trauma(0.5)
 
 	if isDashing:
 		trail = true
