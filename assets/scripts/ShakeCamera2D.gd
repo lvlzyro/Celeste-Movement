@@ -18,7 +18,7 @@ func _ready():
 	noise.period = 4
 	noise.octaves = 2
 
-func add_trauma(amount):
+func shake(amount):
 	trauma = 0;
 	trauma = min(trauma + amount, 1.0)
 	
@@ -27,11 +27,8 @@ func _process(delta):
 		global_position = get_node(target).global_position
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
-		shake()
-
-func shake():
-	var amount = pow(trauma, trauma_power)
-	noise_y += 1
-	rotation = max_roll * amount * noise.get_noise_2d(noise.seed, noise_y)
-	offset.x = max_offset.x * amount * noise.get_noise_2d(noise.seed*2, noise_y)
-	offset.y = max_offset.y * amount * noise.get_noise_2d(noise.seed*3, noise_y)
+		var amount = pow(trauma, trauma_power)
+		noise_y += 1
+		rotation = max_roll * amount * noise.get_noise_2d(noise.seed, noise_y)
+		offset.x = max_offset.x * amount * noise.get_noise_2d(noise.seed*2, noise_y)
+		offset.y = max_offset.y * amount * noise.get_noise_2d(noise.seed*3, noise_y)
